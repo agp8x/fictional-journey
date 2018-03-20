@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+ app:
+  image: docker.clkl.de/x11/gnucash:0.1
+  build: .
+  volumes:
+   - ./data:/root
+   - /tmp/.X11-unix:/tmp/.X11-unix/
+  environment:
+   - DISPLAY=unix$DISPLAY
